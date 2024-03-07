@@ -1,7 +1,5 @@
 # [Bayesian Poker](https://es.wikipedia.org/wiki/Red_bayesiana)
 
----
-
 ## Estructura del Proyecto y Repositorio
 
 El proyecto está basado en la arquitectura modelo vista controlador, por lo que la lógica del proyecto se separa en tres componentes `Modelos`, `Controladores`, y `Vistas`.
@@ -25,6 +23,6 @@ Se utliza el lenguaje de programación [PHP](https://en.wikipedia.org/wiki/PHP) 
 
 ---
 
-###📜 **Archivos php**
+### 📜 **Archivos php**
 
 > Los archivos php que están al principio del proyecto son solo links que llaman a controladores para hacer algo, la neta si se pasaron de rosca los del año pasado, pero que se le va hacer😑😑😑😑.
