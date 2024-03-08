@@ -39,10 +39,11 @@ function validarApellidos() {
   const apellidos = apellidosInput.value.trim();
 
   // Expresión regular que valida dos apellidos separados por un espacio
-  const apellidosRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  const apellidosRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ']+ [A-Za-zÀ-ÖØ-öø-ÿ']+$/;
 
   if (!apellidosRegex.test(apellidos)) {
     apellidosInput.setCustomValidity('Debe ingresar sus dos apellidos separados por un espacio');
+
     apellidosError.textContent = 'Debe ingresar sus dos apellidos separados por un espacio';
   } else {
     apellidosInput.setCustomValidity('');
