@@ -8,7 +8,13 @@
 //
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    console.log("ayayay");
+    console.log("ola tonotos");
+    console.log("ola tonotos");
+    console.log("ola tonotos");
+    console.log("ola tonotos");
+    console.log("ola tonotos");
+    console.log("ola tonotos");
+
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector("#mainNav");
     if (mainNav) {
