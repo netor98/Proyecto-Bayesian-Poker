@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../static/css/recuperarContraStyles.css">
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
 
@@ -26,23 +28,24 @@
     </div>
 
 
-        <div class="centrado-carta">
-            <form class="card" method="POST" action="../recuperarContra.php">
-                <div class="contenido-card">
-                    <img class="exclamacion" src="../static/img/correo-png.png" alt="img">
-                    <p class="contenido">Ingresar el correo electrónico con
-                        el que se registró para 
-                        recuperar su contraseña.</p>
-                </div>
-                <input type="email" class="input correo" name="email" id="inputEmail" placeholder="E-mail">
-                <button onclick=CambiarPestaña5() class="btn">Siguiente</button>
-            </form>
-        </div>
+    <div class="centrado-carta">
+        <form class="card" method="POST" action="../recuperarContra.php">
+            <div class="contenido-card">
+                <img class="exclamacion" src="../static/img/correo-png.png" alt="img">
+                <p class="contenido">Ingresar el correo electrónico con
+                    el que se registró para
+                    recuperar su contraseña.</p>
+            </div>
+            <input type="email" class="input correo" name="email" id="inputEmail" placeholder="E-mail">
+            <button onclick="validarEmail()" class="btn">Siguiente</button>
+        </form>
+    </div>
 
 
 
 
 
-        <script src="/js/scripts1.js"></script>
-    </body>
-    </html>
+    <script src="../static/js/scripts2.js"></script>
+</body>
+
+</html>
