@@ -5,13 +5,13 @@ const optionsList = combobox.querySelector('.options-list');
 const options = combobox.querySelectorAll('.options-list li');
 
 // Agrega un evento de clic al campo de entrada de texto
-inputField.addEventListener('click', function() {
+inputField.addEventListener('click', function () {
   combobox.classList.toggle('open');
 });
 
 // Agrega un evento de clic a cada opción de la lista
-options.forEach(function(option) {
-  option.addEventListener('click', function() {
+options.forEach(function (option) {
+  option.addEventListener('click', function () {
     inputField.value = option.textContent;
     combobox.classList.remove('open');
   });
@@ -39,12 +39,12 @@ function validarApellidos() {
   const apellidos = apellidosInput.value.trim();
 
   // Expresión regular que valida dos apellidos separados por un espacio
-  const apellidosRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ']+ [A-Za-zÀ-ÖØ-öø-ÿ']+$/;
+  const apellidosRegex = /^[a-zA-Z\s]+$/;
 
   if (!apellidosRegex.test(apellidos)) {
-    apellidosInput.setCustomValidity('Debe ingresar sus dos apellidos separados por un espacio');
+    apellidosInput.setCustomValidity('El apellido o apellidos deben contener solo letras y espacios');
 
-    apellidosError.textContent = 'Debe ingresar sus dos apellidos separados por un espacio';
+    apellidosError.textContent = 'El apellido o apellidos deben contener solo letras y espacios';
   } else {
     apellidosInput.setCustomValidity('');
   }
@@ -71,8 +71,8 @@ function validarEdad() {
 const form = document.querySelector('form');
 const btnSiguiente = document.querySelector('#btnSiguiente');
 
-btnSiguiente.addEventListener('click', function(event) {
-  
+btnSiguiente.addEventListener('click', function (event) {
+
   validarNombres();
   validarApellidos();
   validarEdad();
