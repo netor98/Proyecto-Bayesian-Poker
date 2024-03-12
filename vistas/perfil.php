@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil</title>
+    <title>Perfil de <?php echo $usuario;?></title>
+    <link rel="icon" href="/static/img/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
     <link rel="stylesheet" href="/static/css/editarPeriflModal.css" />
@@ -156,7 +157,7 @@ include "$rutaDirectorio/header.php";
         <a class="btn btn-primary" href="./cambiarContra.php">Cambiar contraseña</a>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end m-3">
-            <button class="btn btn-primary" type="button">Volver</button>
+            <a class="btn btn-primary" href="/proyectos.php">Volver</a>
         </div>
     </div>
 
