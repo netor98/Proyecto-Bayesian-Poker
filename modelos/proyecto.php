@@ -144,7 +144,7 @@ class Proyectos
 
     public function abandonarProyecto(){
         $idUsuario = $_COOKIE['idUsuario'];
-        $idProyecto = 11;
+        $idProyecto =  $idProyecto = $_GET['idProyecto'];
         $sql = "UPDATE integrantes SET estatus = 'inactivo' WHERE idUsuario = '$idUsuario' AND idProyecto = '$idProyecto'";
         $this->conexion->getConexion()->query($sql);
     }
