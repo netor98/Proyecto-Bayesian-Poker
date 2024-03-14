@@ -46,19 +46,26 @@ if (isset($_POST['codigoProyecto'])){
     if(!$proyecto->existeCodigoProyecto($codigoProyecto)){
         echo "<div class='mensaje-error'>El código de proyecto no existe</div>";
 
-    }else if (!$proyecto->estaProyectoActivo($codigoProyecto)){
+    }
+    
+    if (!$proyecto->estaProyectoActivo($codigoProyecto)){
         echo "<div class='mensaje-error'>El proyecto esta deshabilitado</div>";
     }
     else{  
         $usuario= $_COOKIE['usuario'];
-        $notificacion = new Notificaciones();
-        $notificacion->solicitarUnirseProyecto($codigoProyecto,$usuario);
+        $idUsuario = $_COOKIE['idUsuario'];
+        $proyecto = new Proyectos();
 
-        header("Location: proyectos.php");
-
-    }
-
+        $idProyecto = $proyecto->obtenerIdProyecto($codigoProyecto);
+        if($proyecto->usuarioEstaProyecto($idUsuario, $idProyecto)) {
+            echo "<div class='mensaje-error'>El usuario ya pertenece al proyecto</div>";
+        } else {
+            $notificacion = new Notificaciones();
+            $notificacion->solicitarUnirseProyecto($codigoProyecto,$usuario);
     
+            header("Location: proyectos.php");
+        }
+    }
 }
 
 

@@ -24,8 +24,9 @@
 <body style="background-color: #203647;">
 
     <?php
-  include "../bayesian-poker/vistas/header.php";
+    $rutaDirectorio = dirname(__FILE__);
 
+    include "$rutaDirectorio/header.php";
   ?>
 
     <form class="container m-4 mx-auto rounded" style="background-color: #EEFBFB;" method="POST"

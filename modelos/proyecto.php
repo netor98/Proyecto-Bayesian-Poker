@@ -1,4 +1,3 @@
-
 <?php
 $rutaDirectorio = dirname(__FILE__);
 
@@ -65,7 +64,10 @@ class Proyectos
         $idUsuario = $_COOKIE['idUsuario'];
         $idProyecto = $this->insertarProyectoBD($nombreProyecto, $descripcionProyecto, $codigoProyecto);
         $this->insertarIntegranteBD($idUsuario, $idProyecto,'scrum master');
-        return $codigoProyecto;
+        return [
+            'codigoProyecto' => $codigoProyecto,
+            'idProyecto' => $idProyecto
+        ];
         
     }
     private function generarCodigoProyecto(){
@@ -93,10 +95,24 @@ class Proyectos
     }
     
     public function insertarIntegranteBD($idUsuario, $idProyecto,$rol){
-        $sql = "INSERT INTO integrantes (idUsuario, idProyecto, rol, estatus) VALUES (?, ?, '$rol', 'activo')";
+        if (!$this->usuarioEstaProyecto($idUsuario, $idProyecto)) {
+            $sql = "INSERT INTO integrantes (idUsuario, idProyecto, rol, estatus) VALUES (?, ?, ?, 'activo')";
+            $stmt = $this->conexion->getConexion()->prepare($sql);
+            $stmt->bind_param("iis", $idUsuario, $idProyecto, $rol);
+            $stmt->execute();
+            return true; 
+        }
+        return false;
+    }
+
+    public function usuarioEstaProyecto($idUsuario, $idProyecto) {
+        $sql = "SELECT COUNT(*) AS count FROM integrantes WHERE idUsuario = ? AND idProyecto = ?";
         $stmt = $this->conexion->getConexion()->prepare($sql);
-        $stmt->bind_param("ii",$idUsuario, $idProyecto);
+        $stmt->bind_param("ii", $idUsuario, $idProyecto);
         $stmt->execute();
+        $resultado = $stmt->get_result();
+        $fila = $resultado->fetch_assoc();
+        return ($fila['count'] > 0); // If count > 0, user is already in project, otherwise not.
     }
 
     public function obtenerIntegrantesProyecto($idProyecto){
@@ -183,8 +199,35 @@ class Proyectos
             return False;
         }
         return True;
-       
     }
+
+    public function obtenerIdProyecto($codigoProyecto){
+
+        $conexion = new Conexion();
+        $resultado = $conexion->getConexion()->query("SELECT idProyecto,nombre FROM proyectos WHERE codigo = '$codigoProyecto'");
+        $fila = $resultado->fetch_assoc();
+        $idProyecto = $fila['idProyecto'];
+
+        return $idProyecto;
+    }
+
+
+    public function obtenerIdUltimoProyecto() {
+        $conexion = new Conexion();
+        // Asigna un alias al resultado de MAX(idProyecto) para facilitar su acceso
+        $resultado = $conexion->getConexion()->query("SELECT MAX(idProyecto) AS ultimoId FROM proyectos;");
+        if ($resultado) {
+            $fila = $resultado->fetch_assoc();
+            // Accede al valor usando el alias definido anteriormente
+            $idProyecto = $fila['ultimoId'];
+            return $idProyecto;
+        } else {
+            // Maneja el caso de error o de que la consulta no devuelva un resultado
+            return null; // O manejar el error según convenga
+        }
+    }
+
+
 
 }
 ?>
