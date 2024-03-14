@@ -40,8 +40,8 @@
 
           <ul class="dropdown-menu dropdown-menu-dark ">
             <li><button name="guardarProyecto" class="dropdown-item active" href="#">Guardar Proyecto</button></li>
-            <li><button class="dropdown-item" type="submit" name='deshabilitarProyecto' href="#">Deshabilitar Proyecto</button></li>
-            <li><button class="dropdown-item" type="submit" name='deshabilitarRol' href="#">Deshabilitar Rol</button></li>
+            <li><button class="dropdown-item" type="submit" name='deshabilitarProyecto' href="#">Deshabilitar Rol</button></li>
+            <li><button class="dropdown-item" type="submit" name='deshabilitarRol' href="#">Deshabilitar Proyecto</button></li>
             <li>
               <hr class="dropdown-divider">
             </li>
