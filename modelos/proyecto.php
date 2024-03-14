@@ -64,7 +64,10 @@ class Proyectos
         $idUsuario = $_COOKIE['idUsuario'];
         $idProyecto = $this->insertarProyectoBD($nombreProyecto, $descripcionProyecto, $codigoProyecto);
         $this->insertarIntegranteBD($idUsuario, $idProyecto,'scrum master');
-        return $codigoProyecto;
+        return [
+            'codigoProyecto' => $codigoProyecto,
+            'idProyecto' => $idProyecto
+        ];
         
     }
     private function generarCodigoProyecto(){
@@ -206,6 +209,22 @@ class Proyectos
         $idProyecto = $fila['idProyecto'];
 
         return $idProyecto;
+    }
+
+
+    public function obtenerIdUltimoProyecto() {
+        $conexion = new Conexion();
+        // Asigna un alias al resultado de MAX(idProyecto) para facilitar su acceso
+        $resultado = $conexion->getConexion()->query("SELECT MAX(idProyecto) AS ultimoId FROM proyectos;");
+        if ($resultado) {
+            $fila = $resultado->fetch_assoc();
+            // Accede al valor usando el alias definido anteriormente
+            $idProyecto = $fila['ultimoId'];
+            return $idProyecto;
+        } else {
+            // Maneja el caso de error o de que la consulta no devuelva un resultado
+            return null; // O manejar el error según convenga
+        }
     }
 
 

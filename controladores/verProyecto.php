@@ -40,7 +40,7 @@ if(isset($_POST['deshabilitarRol'])){
     $proyecto->deshabilitarRol($idUsuario,$idProyecto);
     header("Location: ./proyectos.php");
  
- }
+}
 $idProyecto = $_GET['idProyecto'];
 $rol = $usuario->obtenerRol($idProyecto);
 $datosProyecto = $proyecto->obtenerProyecto();

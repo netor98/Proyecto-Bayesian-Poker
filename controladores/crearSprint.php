@@ -14,7 +14,8 @@ if(isset($_POST['nombreSprint']) && isset($_POST['descripcionSprint'])){
         $descripcion = $_POST['descripcionSprint'];
         $sprint = new Sprint();
         $sprint->crearSprint($nombre,$descripcion);
-
+        header("Location: " . $baseURL . "/proyectoSprints.php?idProyecto=" . $_GET['idProyecto']);
+        exit();
     }
 
 }
