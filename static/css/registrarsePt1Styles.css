@@ -1,11 +1,11 @@
 :root {
-    --azul-bajo: #4DA8DA;
+    --azul-bajo: #4da8da;
     --azul-fuerte: #696969;
-    --azul-medio: #007CC7;
-    --color-letra: #EEFBFB;
+    --azul-medio: #007cc7;
+    --color-letra: #eefbfb;
 }
 
-body{
+body {
     padding: 0;
     margin: 0;
 }
@@ -19,51 +19,43 @@ body{
 .primer-contenedor {
     background-color: var(--azul-bajo);
     height: 100%; /* Establecer la altura al 100% para ocupar el espacio total de la fila */
-
 }
 
 .segundo-contenedor {
     background-color: var(--azul-fuerte);
     height: 100%; /* Establecer la altura al 100% para ocupar el espacio total de la fila */
-
 }
 
-
-.card{
-    
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--azul-medio);  
-    border: 2px solid #EEFBFB;
+    background-color: var(--azul-medio);
+    border: 2px solid #eefbfb;
     border-radius: 24px;
     gap: 20px;
     height: 500px;
     width: 300px;
     border-radius: 24px;
-    
 }
 
 .card input::placeholder {
-    color: var(--color-letra); 
+    color: var(--color-letra);
     text-indent: 30px; /* Ajustar el valor según tu preferencia */
 }
 
-
-.img-user{
+.img-user {
     width: 40%;
     height: 20%;
     border-radius: 50%;
-
 }
 
-.centrado-carta{
-
+.centrado-carta {
     position: absolute; /* Establecer posición absoluta para el contenedor hijo */
     top: 50%; /* Centrar verticalmente en la mitad de la altura del contenedor padre */
     left: 50%; /* Centrar horizontalmente en la mitad del ancho del contenedor padre */
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 }
 
 .btn-imagen {
@@ -74,13 +66,13 @@ body{
 }
 
 .btn-imagen img {
-width: 15%; /* Ajusta el tamaño de la imagen al 100% del ancho del enlace */
-height: auto; /* Ajusta la altura de la imagen automáticamente para mantener la proporción */
-padding-top: 18%;
-padding-left: 5%;
+    width: 15%; /* Ajusta el tamaño de la imagen al 100% del ancho del enlace */
+    height: auto; /* Ajusta la altura de la imagen automáticamente para mantener la proporción */
+    padding-top: 18%;
+    padding-left: 5%;
 }
-  
-  .input{
+
+.input {
     width: 80%;
     height: 5%;
     border: none;
@@ -89,27 +81,26 @@ padding-left: 5%;
     font-size: 20px;
     outline: none;
     background: rgba(238, 251, 251, 0.53);
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 29px;
     color: var(--color-letra);
-    
 }
 
 .custom-combobox {
     position: relative;
     display: inline-block;
-  }
-  
-  .input-field {
+}
+
+.input-field {
     width: 99%;
     padding: 10px;
     border: 1px solid #ccc;
-  }
-  
-  .options-list {
+}
+
+.options-list {
     position: absolute;
     top: 100%;
     left: 0;
@@ -120,27 +111,26 @@ padding-left: 5%;
     padding: 0;
     margin: 0;
     display: none;
-  }
-  
-  .options-list li {
+}
+
+.options-list li {
     padding: 10px;
     cursor: pointer;
-  }
-  
-  .options-list li:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .options-list li:first-child {
-    border-top: none;
-  }
-  
-  .custom-combobox.open .options-list {
-    display: block;
-  }
+}
 
-  
-  .btn{
+.options-list li:hover {
+    background-color: #f5f5f5;
+}
+
+.options-list li:first-child {
+    border-top: none;
+}
+
+.custom-combobox.open .options-list {
+    display: block;
+}
+
+.btn {
     width: 70%;
     height: 10%;
     border: none;
@@ -149,49 +139,48 @@ padding-left: 5%;
     font-size: 20px;
     outline: none;
     background: rgba(238, 251, 251, 0.53);
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 29px;
     color: var(--color-letra);
-    cursor: pointer; 
+    cursor: pointer;
     text-align: center;
-  }
+}
 
-  .nombre{
-    background-image: url("/img/nombre-apellido-png.png");
+.nombre {
+    background-image: url("/static/img/nombre-apellido-png.png");
     background-repeat: no-repeat;
     background-position: left 10px center; /* Mover la imagen a la izquierda con un margen de 10px y centrada verticalmente */
     background-size: 20px 20px;
     text-align: left; /* Ajusta el valor de text-align para que el texto aparezca a la derecha */
     text-indent: 30px;
-  }
+}
 
-
-  .apellido{
-    background-image: url("/img/nombre-apellido-png.png");
+.apellido {
+    background-image: url("/static/img/nombre-apellido-png.png");
     background-repeat: no-repeat;
     background-position: left 10px center; /* Mover la imagen a la izquierda con un margen de 10px y centrada verticalmente */
     background-size: 20px 20px;
     text-align: left; /* Ajusta el valor de text-align para que el texto aparezca a la derecha */
     text-indent: 30px;
-  }
+}
 
-  .edad{
-    background-image: url("/img/edad-png.png");
+.edad {
+    background-image: url("/static/img/edad-png.png");
     background-repeat: no-repeat;
     background-position: left 10px center; /* Mover la imagen a la izquierda con un margen de 10px y centrada verticalmente */
     background-size: 20px 20px;
     text-align: left; /* Ajusta el valor de text-align para que el texto aparezca a la derecha */
     text-indent: 30px;
-  }
+}
 
-  .genero{
-    background-image: url("/img/genero-png.png");
+.genero {
+    background-image: url("/static/img/genero-png.png");
     background-repeat: no-repeat;
     background-position: left 10px center; /* Mover la imagen a la izquierda con un margen de 10px y centrada verticalmente */
     background-size: 20px 20px;
     text-align: left; /* Ajusta el valor de text-align para que el texto aparezca a la derecha */
     text-indent: 30px;
-  }
+}

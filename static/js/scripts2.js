@@ -17,18 +17,21 @@ function validarUsuario() {
 }
 
 function validarContrasena() {
+    console.log("asdasd");
     const contrasenaInput = document.querySelector('input[name="contrasena"]');
     const contrasena = contrasenaInput.value;
 
     // Expresión regular que valida la contraseña (mínimo 8 caracteres, al menos una letra mayúscula, una minúscula y un número)
-    const contrasenaRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    const contrasenaRegex =
+        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 
     if (!contrasenaRegex.test(contrasena)) {
+        console.log("aaaa");
         contrasenaInput.setCustomValidity(
-            "La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula y un número"
+            "La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un símbolo"
         );
         contrasenaError.textContent =
-            "La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula y un número";
+            "La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un símbolo";
     } else {
         contrasenaInput.setCustomValidity("");
     }
