@@ -37,26 +37,23 @@
             <?php
       if ($rol == 'scrum master') {
       ?>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Opciones
-                </button>
 
-                <ul class="dropdown-menu dropdown-menu-dark ">
-                    <li><button name="guardarProyecto" class="dropdown-item active" href="#">Guardar Proyecto</button>
-                    </li>
-                    <li><button class="dropdown-item" type="submit" name='deshabilitarProyecto' href="#">Deshabilitar
-                            Proyecto</button></li>
-                    <li><button class="dropdown-item" type="submit" name='deshabilitarRol' href="#">Deshabilitar
-                            Rol</button></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="../proyectos.php">Volver</a></li>
-                </ul>
-            </div>
-            <?php
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Opciones
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-dark ">
+            <li><button name="guardarProyecto" class="dropdown-item active" href="#">Guardar Proyecto</button></li>
+            <li><button class="dropdown-item" type="submit" name='deshabilitarProyecto' href="#">Deshabilitar Rol</button></li>
+            <li><button class="dropdown-item" type="submit" name='deshabilitarRol' href="#">Deshabilitar Proyecto</button></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="../proyectos.php">Volver</a></li>
+          </ul>
+        </div>
+      <?php
       } else {
       ?>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end m-3">
