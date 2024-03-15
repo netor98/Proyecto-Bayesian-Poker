@@ -41,9 +41,14 @@ if(isset($_POST["usuario"]) && isset($_POST["contrasena"])  && isset($_POST["ema
     $exitoRegistro = $registrarse->registrarUsuario($nombre, $apellido, $edad, $genero, $usuario, $contrasena, $email,$codigo);
     
     if($exitoRegistro == "0"){
-        echo "<div class='mensaje-error'>El nombre de usuario o el correo electronico ya esta en uso</div>";
+        echo "<div class='mensaje-error'>El correo electronico ya esta en uso</div>";
     }
+
     if($exitoRegistro == "1"){
+        echo "<div class='mensaje-error'>El nombre de usuario ya esta en uso</div>";
+    }
+    
+    if($exitoRegistro == "2"){
         header("Location: alertaEmail.php");
         $destinatario = $email;
         $subject = "Validar email";

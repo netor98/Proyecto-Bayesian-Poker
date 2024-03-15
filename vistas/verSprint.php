@@ -78,7 +78,7 @@
             <a href="<?php $baseURL?>/editarSprint.php?<?php echo 'idProyecto=' . $_GET['idProyecto'] . '&idSprint=' . $_GET['idSprint']; ?>"
                 class="btn btn-secondary">Editar Sprint</a>
 
-            <a href="<?php $baseURL?>/CrearHistoria.php?idProyecto=<?php echo $_GET['idProyecto'] ?>&idSprint=<?php echo $_GET['idSprint'] ?>"
+            <a href="<?php $baseURL?>/crearHistoria.php?idProyecto=<?php echo $_GET['idProyecto'] ?>&idSprint=<?php echo $_GET['idSprint'] ?>"
                 class="btn btn-info">Añadir Historia</a>
 
             <?php    
