@@ -23,7 +23,7 @@ function validarContrasena() {
 
     // Expresión regular que valida la contraseña (mínimo 8 caracteres, al menos una letra mayúscula, una minúscula y un número)
     const contrasenaRegex =
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-."/()¡¿,]).{8,}$/;
 
     if (!contrasenaRegex.test(contrasena)) {
         console.log("aaaa");
